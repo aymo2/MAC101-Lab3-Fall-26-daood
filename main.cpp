@@ -4,19 +4,22 @@ using namespace std;
 int main() {
     string ign;
     double gpa;
-    double acholds;
+    double holds;
     double credits;
+    double coursereq;
 
     cout << "Hello, Student what is your name before we begin your graduation evaulation?" << endl;
     cin >> ign;
     cout << "Wonderful " <<ign << " first things first how much credits do you have?" << endl;
     cin >> credits;
     cout << "Ok, now how what is the number of current accademic holds you have currently?" << endl;
-    cin >> acholds;
+    cin >> holds;
+    cout << "How much course requirements do you have left?" << endl;
+    cin >> coursereq;
     cout << "Last question before I can get your elegibility, what is your gpa?" << endl;
     cin >> gpa;
 
-    if (gpa >= 2 && acholds == 0 && credits >= 60) {
+    if (gpa >= 2 && holds == 0 && credits >= 60 && coursereq == 0) {
         cout << "Congratulations " << ign << " you are eligible to graduate!" << endl;
  }
     else {
@@ -27,8 +30,11 @@ int main() {
         if (credits < 60 ) {
             cout << "-Sub 60 credits" << endl;
         }
-        if (acholds > 0) {
+        if (holds > 0) {
             cout << "-Academic Holds" << endl;
+        }
+        if (coursereq > 0) {
+            cout << "-Course requirements" << endl;
         }
         cout << "NEXT!!!" << endl;
     } 
